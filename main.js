@@ -13,3 +13,18 @@ function openMenuMobile() {
 function closeMenuMobile() {
    document.body.classList.remove('menu__expanded_mobile');
 }
+
+//! === === === ===|> ScrollReveal
+ScrollReveal({
+   origin: 'top',
+   distance: '30px',
+   duration: 900,
+}).reveal(`
+   #home,
+   #home img,
+   #home .stats,
+   #services,
+   #services header,
+   #services .card,
+   #about header,
+   #about .content`)
