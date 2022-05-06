@@ -5,11 +5,12 @@
 */
 * {
    margin: 0;
+   padding: 0;
    box-sizing: border-box;
 }
 /*
 	<== === === === ===
-	!|> Variables Page
+	!|> Variables
 	=== === === === ==>
 */
 :root {
@@ -30,26 +31,37 @@
 	!|> Style Generics
 	=== === === === ==>
 */
+html,
+body {
+   width: 100%;
+   height: 100%;
+}
 body {
    font-family: "DM Sans";
    font-size: 1.6rem;
 
    text-align: center;
+
+   overflow: overlay;
 }
 .wrapper {
    width: 37.5rem;
    margin-inline: auto;
    padding-inline: 2.4rem;
 }
+
+ul {
+   list-style: none;
+}
 /*
-	* <== === === === === HEADER Page === === === === ==>
+	fixme <== === === === === HEADER === === === === ==>
 */
 header {
    margin-top: calc(4.1rem + var(--nav-height));
 }
 header::before {
    content: "";
-   width: 100vw;
+   width: 100%;
    height: calc(108rem + var(--nav-height));
    background-color: var(--brand-light);
    display: block;
@@ -137,7 +149,7 @@ header img {
    line-height: 150%;
 }
 /*
-	* <== === === === === NAVIGATION Page === === === === ==>
+	fixme <== === === === === NAVIGATION === === === === ==>
 */
 nav {
    display: flex;
@@ -161,6 +173,94 @@ nav.scroll {
 nav.scroll svg:nth-child(1) path {
    fill: var(--color-white);
 }
-nav.scroll svg:nth-child(2) path {
+nav.scroll button path {
+   stroke: var(--color-white);
+}
+nav button {
+   background: none;
+   border: none;
+   cursor: pointer;
+}
+/*
+	fixme <== === === === === NAVIGATION |> MENU --> MOBILE === === === === ==>
+*/
+body.menu__expanded_mobile {
+   overflow: hidden;
+}
+body.menu__expanded_mobile > :not(nav) {
+   display: none;
+}
+.menu__mobile,
+.close__menu_mobile,
+body.menu__expanded_mobile .open__menu_mobile {
+   opacity: 0.5;
+   visibility: hidden;
+}
+body.menu__expanded_mobile .menu__mobile,
+body.menu__expanded_mobile .close__menu_mobile {
+   opacity: 1;
+   visibility: visible;
+}
+body.menu__expanded_mobile .menu__mobile {
+   position: fixed;
+   top: 0;
+   left: 0;
+   background: var(--primary-color);
+
+   width: 100vw;
+   height: 100vh;
+
+   padding-top: var(--nav-height);
+}
+body.menu__expanded_mobile nav {
+   position: relative;
+}
+.menu__mobile ul:nth-child(1) {
+   display: flex;
+   flex-direction: column;
+   gap: 4.8rem;
+
+   margin-top: 6rem;
+
+   font-weight: 700;
+   font-size: 2.4rem;
+   line-height: 3.1rem;
+}
+.menu__mobile ul li a {
+   color: var(--color-white);
+   text-decoration: none;
+}
+.menu__mobile .button__menu_mobile {
+   background: var(--color-white);
+   border-radius: 4rem;
+   font-weight: 700;
+   font-size: 1.8rem;
+   line-height: 2.3rem;
+   text-transform: uppercase;
+   text-decoration: none;
+
+   color: var(--primary-color);
+
+   display: inline-block;
+   padding: 16px 32px;
+
+   margin-top: 4.8rem;
+   margin-bottom: 8rem;
+}
+.social__links {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 3.2rem;
+}
+body.menu__expanded_mobile .logo,
+body.menu__expanded_mobile button {
+   position: relative;
+   z-index: 100;
+}
+body.menu__expanded_mobile .logo path {
+   fill: var(--color-white);
+}
+body.menu__expanded_mobile button path {
    stroke: var(--color-white);
 }
