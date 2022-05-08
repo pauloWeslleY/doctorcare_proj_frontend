@@ -1,0 +1,105 @@
+/*
+	fixme <== === === === === RESPONSIVO === === === === ==>
+*/
+@media (min-width: 1024px) {
+   /* ? <== === === === === STYLES GLOBAL === === === === ==> */
+   .wrapper {
+      width: min(112rem, 100%);
+   }
+   /* ? <== === === === === RESET PAGE === === === === ==> */
+   nav#navigation .wrapper * {
+      margin: 0;
+      padding: 0;
+      visibility: initial;
+      display: initial;
+      opacity: initial;
+      flex-direction: initial;
+      position: initial;
+      transform: initial;
+      font-weight: initial;
+      font-size: initial;
+      background: initial;
+      color: initial;
+   }
+   nav#navigation .open__menu_mobile,
+   nav#navigation .close__menu_mobile,
+   nav#navigation .social__links {
+      display: none;
+   }
+   nav#navigation .menu__mobile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 60%;
+   }
+   nav#navigation .menu__mobile ul:nth-child(1) {
+      display: flex;
+      gap: 3.2em;
+   }
+   nav#navigation .menu__mobile ul li a {
+      color: var(--primary-color);
+      opacity: 0.7;
+   }
+   nav#navigation .menu__mobile a.button__menu_mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 2.4rem;
+
+      border: 1px solid var(--primary-color);
+      border-radius: 4rem;
+
+      color: var(--primary-color);
+
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      text-transform: uppercase;
+   }
+   nav#navigation.scroll .menu__mobile ul li a {
+      color: var(--brand-light);
+      opacity: 0.6rem;
+   }
+   nav#navigation.scroll .menu__mobile a.button__menu_mobile {
+      border-color: var(--color-white);
+      color: var(--color-white);
+   }
+   nav#navigation .menu__mobile li a {
+      transition: opacity 0.4s;
+   }
+   nav#navigation .menu__mobile li a:hover {
+      opacity: 1;
+      font-weight: 700;
+   }
+   nav#navigation .menu__mobile li a::after {
+      content: "";
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-color);
+
+      position: relative;
+      bottom: -2rem;
+      left: -0.5rem;
+
+      display: block;
+
+      transition: width 0.2s;
+   }
+   nav#navigation.scroll .menu__mobile li a::after {
+      background-color: var(--color-white);
+   }
+   nav#navigation .menu__mobile li a:hover::after {
+      padding-inline: 0.8rem;
+      width: 100%;
+   }
+   nav#navigation.scroll .menu__mobile li a:hover::after {
+      opacity: 1;
+   }
+   /* ? <== === === === === NAVIGATION === === === === ==> */
+   /* ? <== === === === === HEADER === === === === ==> */
+   /* ? <== === === === === HOME === === === === ==> */
+   /* ? <== === === === === SERVICES === === === === ==> */
+   /* ? <== === === === === ABOUT === === === === ==> */
+   /* ? <== === === === === CONTACT === === === === ==> */
+   /* ? <== === === === === FOOTER === === === === ==> */
+}
