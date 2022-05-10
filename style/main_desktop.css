@@ -3,10 +3,28 @@
 */
 @media (min-width: 1024px) {
    /* ? <== === === === === STYLES GLOBAL === === === === ==> */
+   body {
+      overflow: auto;
+   }
    .wrapper {
       width: min(112rem, 100%);
+      display: grid;
+   }
+   .col-a {
+      grid-area: A;
+   }
+   .col-b {
+      grid-area: B;
+   }
+   section {
+      padding-block: 16rem;
+   }
+   section header h2 {
+      font-size: 4rem;
+      line-height: 5.2rem;
    }
    /* ? <== === === === === RESET PAGE === === === === ==> */
+   /*fixme <|=== RESET NAVIGATION ===|>*/
    nav#navigation .wrapper * {
       margin: 0;
       padding: 0;
@@ -20,6 +38,7 @@
       font-size: initial;
       background: initial;
       color: initial;
+      filter: initial;
    }
    nav#navigation .open__menu_mobile,
    nav#navigation .close__menu_mobile,
@@ -56,8 +75,12 @@
       line-height: 1.8rem;
       text-transform: uppercase;
    }
+   nav#navigation .menu__mobile a.button__menu_mobile:hover {
+      background-color: var(--primary-color);
+      color: var(--color-white);
+   }
    nav#navigation.scroll .menu__mobile ul li a {
-      color: var(--brand-light);
+      color: var(--brand-light-2);
       opacity: 0.6rem;
    }
    nav#navigation.scroll .menu__mobile a.button__menu_mobile {
@@ -67,6 +90,7 @@
    nav#navigation .menu__mobile li a {
       transition: opacity 0.4s;
    }
+   nav#navigation .menu__mobile li a.active,
    nav#navigation .menu__mobile li a:hover {
       opacity: 1;
       font-weight: 700;
@@ -88,6 +112,7 @@
    nav#navigation.scroll .menu__mobile li a::after {
       background-color: var(--color-white);
    }
+   nav#navigation .menu__mobile li a.active::after,
    nav#navigation .menu__mobile li a:hover::after {
       padding-inline: 0.8rem;
       width: 100%;
@@ -95,11 +120,110 @@
    nav#navigation.scroll .menu__mobile li a:hover::after {
       opacity: 1;
    }
-   /* ? <== === === === === NAVIGATION === === === === ==> */
-   /* ? <== === === === === HEADER === === === === ==> */
-   /* ? <== === === === === HOME === === === === ==> */
-   /* ? <== === === === === SERVICES === === === === ==> */
-   /* ? <== === === === === ABOUT === === === === ==> */
-   /* ? <== === === === === CONTACT === === === === ==> */
-   /* ? <== === === === === FOOTER === === === === ==> */
+   nav#navigation.scroll .menu__mobile a.button__menu_mobile.active,
+   nav#navigation.scroll .menu__mobile a.button__menu_mobile:hover {
+      background-color: var(--primary-color);
+      filter: brightness(1.3);
+      border: none;
+      transition: 0.9s;
+   }
+   /*? <== === === === === HEADER === === === === ==> */
+   /* *<|=== Desktop HEADER ===|>*/
+   #home::before {
+      height: calc(96% - var(--nav-height));
+   }
+   #home {
+      padding-top: var(--nav-height);
+   }
+   #home .wrapper {
+      grid-template-columns: 60.5rem 1fr;
+      grid-template-areas:
+         "A B"
+         "C C";
+   }
+   #home .col-a {
+      text-align: left;
+      align-self: center;
+   }
+   #home h1 {
+      font-size: 5.2rem;
+   }
+   #home .content p {
+      font-size: 1.8rem;
+   }
+   #home .stats {
+      grid-area: C;
+
+      flex-direction: row;
+      padding: 6rem;
+      gap: 0;
+   }
+   #home .stats .stat + .stat {
+      border-left: 1px solid var(--primary-color);
+   }
+   #home .stats .stat {
+      flex: 1;
+   }
+   #home .btn__contact {
+      margin: 0;
+   }
+   #home img {
+      width: 42rem;
+   }
+   /*? <== === === === === SERVICES === === === === ==> */
+   /* *<|=== Desktop SERVICES ===|>*/
+   #services h2 {
+      width: 47rem;
+      margin-inline: auto;
+   }
+   #services .cards {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 4rem;
+   }
+   #services .card {
+      width: 30%;
+      flex-grow: 1;
+   }
+   /*? <== === === === === ABOUT === === === === ==> */
+   /* *<|=== Desktop ABOUT ===|>*/
+   #about .wrapper {
+      grid-template-columns: 48rem 1fr;
+      grid-template-areas: "B A";
+      gap: 6.7rem;
+   }
+   #about .col-a {
+      align-self: center;
+   }
+   #about .content p {
+      margin-bottom: 0;
+   }
+   /*? <== === === === === CONTACT === === === === ==> */
+   /* *<|=== Desktop CONTACT ===|>*/
+   #contact .wrapper {
+      grid-template-columns: 1fr 57.5rem;
+      grid-template-areas: "A B";
+   }
+   #contact h2 {
+      width: 40.4rem;
+   }
+   /*? <== === === === === FOOTER === === === === ==> */
+   /* *<|=== Desktop FOOTER ===|>*/
+   footer {
+      padding-block: 8rem;
+   }
+   footer .wrapper {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "A B";
+   }
+   footer .col-a {
+      align-self: center;
+   }
+   footer .col-b {
+      align-self: center;
+      justify-self: end;
+   }
+   footer p {
+      margin-bottom: 0;
+   }
 }

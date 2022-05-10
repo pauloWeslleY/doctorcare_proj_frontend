@@ -22,6 +22,7 @@
 
    --brand-beige: hsl(39, 100%, 97%);
    --brand-light: hsl(calc(var(--hue) - 22), 23%, 89%);
+   --brand-light-2: hsl(calc(var(--hue) + 10), 14%, 97%);
    --brand-dark: hsl(var(--hue), 100%, 14%);
 
    --bg-light: hsl(180, 14%, 97%);
@@ -274,12 +275,13 @@ body.menu__expanded_mobile button path {
 	fixme <== === === === === #HOME === === === === ==>
 */
 #home {
+   padding-block: 0;
    padding-top: calc(4.1rem + var(--nav-height));
 }
 #home::before {
    content: "";
    width: 100%;
-   height: calc(108rem + var(--nav-height));
+   height: calc(76% + var(--nav-height));
    background-color: var(--brand-light);
    display: block;
 
